@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "visualclient",
+  "version": "${version}",
+  "name": "Visual Client",
+  "description": "Visual modules for Fabric 1.21.11",
+  "authors": ["You"],
+  "license": "CC0-1.0",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.example.visualclient.VisualClient"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "visualclient.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
