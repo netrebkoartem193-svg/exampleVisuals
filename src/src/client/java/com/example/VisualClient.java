@@ -28,10 +28,8 @@ public class VisualClient implements ClientModInitializer {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.options.hideGui) return;
 
-        // FPS
         graphics.drawString(mc.font, Component.literal("FPS: " + mc.getFps()), 10, 10, 0xFFFFFF);
 
-        // Анимированная полоска
         double time = System.currentTimeMillis() / 1000.0;
         float pulse = Mth.abs(Mth.sin((float) time * 2.0f));
         int r = (int) (255 * pulse);
@@ -41,7 +39,6 @@ public class VisualClient implements ClientModInitializer {
         graphics.fill(10, 25, 120, 38, color);
         graphics.drawString(mc.font, Component.literal("Visuals Active"), 15, 28, 0xFFFFFF);
 
-        // Скорость
         double speed = mc.player.getDeltaMovement().horizontalDistance() * 20.0;
         graphics.drawString(mc.font, Component.literal(String.format("Speed: %.1f b/s", speed)), 10, 45, 0x55FF55);
     }
